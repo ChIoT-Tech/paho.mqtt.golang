@@ -47,6 +47,7 @@ func TestCustomConnectionFunction(t *testing.T) {
 	}
 	options := &ClientOptions{
 		CustomOpenConnectionFn: customConnectionFunc,
+		ConnectTimeout:         time.Second * 5,
 	}
 	brokerAddr := netServer.LocalAddr().Network()
 	options.AddBroker(brokerAddr)
